@@ -675,3 +675,44 @@ corresponding CSS (`style.css` §7) — it's fully gone, not hidden. `.site-head
 (`position: sticky; top: 0`) now sits flush at the very top of the viewport with
 nothing above it. No other layout changes needed; the header didn't depend on the top
 bar's height for anything.
+
+---
+
+## Mobile responsiveness audit + UI bug fixes (client request: "more mobile responsive, fix UI bugs")
+
+Rather than guess, audited the live site across 16 widths (280–1920px) × 4 pages via a
+CDP-driven headless Chrome, checking `scrollWidth` vs `clientWidth` for horizontal
+overflow and screenshotting suspicious spots. Found and fixed two real bugs:
+
+1. **Contact form caused horizontal overflow on every mobile width** (scrollWidth
+   ~468px regardless of viewport, confirmed as low as 320px). Root cause: `.field
+   input/select/textarea` had no `width`/`min-width` set, so the `<select>`'s longest
+   `<option>` text ("Advice on setting up a breeding support laboratory") drove an
+   intrinsic content width past the viewport — and because flex/grid children default
+   to `min-width: auto` (which respects that intrinsic size), nothing shrank it back
+   down. Fixed with `width: 100%; min-width: 0;` on all three. Re-verified desktop's
+   2-column field-row layout still renders correctly (no regression) and the `<select>`
+   is still functional, not just visually resized.
+2. **Hero badge on the contained mobile photo covered most of the image and, at very
+   narrow widths (320–360px), needed its subtitle to wrap to a 2nd/3rd line.** Not a
+   clipping bug (`overflow: hidden` was working correctly — confirmed by measuring
+   actual box geometry via CDP before assuming otherwise) but a real proportions
+   problem: a 4:3 image at 320px viewport width is only 210px tall, and a 3-line badge
+   eats over half of that, leaving almost no photo visible. Fixed three ways together:
+   shortened the badge's subtitle ("Advisory built around your herd" → "Built around
+   your herd", removing a redundant word since "Farm-first" already implies advisory),
+   gave `.hero__badge` an explicit `max-width: 16rem` plus both `left`/`right` offsets
+   (predictable shrink-to-fit sizing instead of relying on implicit containing-block
+   math), and added `aspect-ratio: 1/1` for the hero image below 26rem (416px) so the
+   image itself has more height to work with on the narrowest phones.
+
+Both fixes verified three ways, not just visually: (a) `scrollWidth` swept across 64
+width×page combinations post-fix — zero overflow anywhere; (b) functional CDP tests
+re-run (menu toggle, honeypot, no-JS content visibility, `<select>` still accepts a
+value) — all still pass; (c) screenshot comparison before/after at 320px showing the
+badge fitting on one line with the image clearly visible again.
+
+No other UI bugs found in the sweep — cards, steps, footer, mobile menu sheet, and the
+`.split__chip` floating-card pattern (which already had a `max-width` + stack-below-
+on-mobile fallback, unlike the hero badge before this fix) all held up cleanly across
+every width tested.

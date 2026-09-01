@@ -80,6 +80,7 @@ function initContactForm() {
     }
 
     const payload = Object.fromEntries(data.entries());
+    payload.service = data.getAll('service');
     if (submitBtn) submitBtn.disabled = true;
     setStatus('Sending…');
 
@@ -98,7 +99,7 @@ function initContactForm() {
         '\nOrganisation: ' + (payload.organisation || '') +
         '\nDistrict: ' + (payload.district || '') +
         '\nEnterprise: ' + (payload.enterprise || '') +
-        '\nService interest: ' + (payload.service || '') +
+        '\nService interest: ' + (payload.service.join(', ') || '') +
         '\n\n' + (payload.message || '')
       );
       const subject = encodeURIComponent('Enquiry from ' + (payload.name || 'website'));
@@ -114,6 +115,16 @@ function initContactForm() {
   });
 }
 
+function initContactCounter() {
+  const el = document.querySelector('[data-contact-count]');
+  if (!el) return;
+  fetch('/api/contact/count')
+    .then((res) => { if (!res.ok) throw new Error('request-failed'); return res.json(); })
+    .then((data) => { el.textContent = Number(data.count || 0).toLocaleString('en-UG'); })
+    .catch(() => { el.closest('section').hidden = true; });
+}
+
 initMenu();
 initReveal();
 initContactForm();
+initContactCounter();

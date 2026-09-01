@@ -4,6 +4,7 @@
 // Run: npm install && npm start (see .env.example for required variables).
 
 require('dotenv').config();
+const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const nodemailer = require('nodemailer');
@@ -11,6 +12,9 @@ const nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 3000;
 const TO_EMAIL = process.env.TO_EMAIL || 'info@genbionex.ug';
 const SITE_ROOT = path.join(__dirname, '..');
+
+const DATA_DIR = path.join(__dirname, 'data');
+const COUNT_FILE = path.join(DATA_DIR, 'contact-count.json');
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 const RATE_LIMIT_MAX = 5; // requests per window per IP
@@ -26,6 +30,7 @@ const FIELD_LIMITS = {
   message: 4000
 };
 const REQUIRED_FIELDS = ['name', 'email', 'district', 'message'];
+const MAX_SERVICE_ITEMS = 10;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const CONTROL_CHAR_RE = new RegExp('[\\u0000-\\u001F\\u007F]', 'g');
 
@@ -50,6 +55,31 @@ function sanitize(value, maxLength) {
   const noNewlines = value.split('\r\n').join(' ').split('\n').join(' ').split('\r').join(' ');
   const noControl = noNewlines.replace(CONTROL_CHAR_RE, '');
   return noControl.trim().slice(0, maxLength);
+}
+
+function sanitizeList(values, maxItemLength, maxItems) {
+  const arr = Array.isArray(values) ? values : (values ? [values] : []);
+  return arr.map((v) => sanitize(v, maxItemLength)).filter(Boolean).slice(0, maxItems);
+}
+
+function readContactCount() {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(COUNT_FILE, 'utf8'));
+    return Number.isFinite(parsed.count) ? parsed.count : 0;
+  } catch (err) {
+    return 0;
+  }
+}
+
+function incrementContactCount() {
+  const count = readContactCount() + 1;
+  try {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.writeFileSync(COUNT_FILE, JSON.stringify({ count }));
+  } catch (err) {
+    console.error('contact counter write failed:', err.message);
+  }
+  return count;
 }
 
 function validate(body) {
@@ -100,8 +130,10 @@ app.post('/api/contact', async (req, res) => {
 
   const fields = {};
   for (const key of Object.keys(FIELD_LIMITS)) {
+    if (key === 'service') continue;
     fields[key] = sanitize(body[key], FIELD_LIMITS[key]);
   }
+  fields.service = sanitizeList(body.service, FIELD_LIMITS.service, MAX_SERVICE_ITEMS);
 
   const text = [
     'Name: ' + fields.name,
@@ -109,7 +141,7 @@ app.post('/api/contact', async (req, res) => {
     'Organisation: ' + (fields.organisation || '—'),
     'District: ' + fields.district,
     'Enterprise: ' + (fields.enterprise || '—'),
-    'Service interest: ' + (fields.service || '—'),
+    'Service interest: ' + (fields.service.length ? fields.service.join(', ') : '—'),
     '',
     'Message:',
     fields.message
@@ -124,11 +156,16 @@ app.post('/api/contact', async (req, res) => {
       subject: 'Website enquiry from ' + fields.name,
       text: text
     });
+    incrementContactCount();
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('contact form send failed:', err.message);
     return res.status(502).json({ ok: false, error: 'Could not send the message. Please email us directly.' });
   }
+});
+
+app.get('/api/contact/count', (req, res) => {
+  res.status(200).json({ count: readContactCount() });
 });
 
 app.listen(PORT, () => {
