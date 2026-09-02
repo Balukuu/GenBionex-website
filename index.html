@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GenBionex — Livestock Breeding &amp; Genetics Consultancy, Uganda</title>
-<meta name="description" content="Livestock breeding and management consultancy in Uganda. Genetic services, breeding advisory, and farm enterprise support for stronger, evidence-led herds.">
+<meta name="description" content="Uganda's premier livestock breeding and management consultancy. Genetic services, on-farm DNA collection, breeding goals, customized nutrition, and farm enterprise advisory.">
 <link rel="canonical" href="https://genbionex.ug/">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <meta name="theme-color" content="#0E2A20">
@@ -18,6 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preload" href="assets/fonts/plus-jakarta-sans-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 
@@ -50,11 +51,11 @@
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
-
+<!-- Main Sticky Header -->
 <header class="site-header">
   <div class="wrap site-header__bar">
     <a class="wordmark" href="index.html">
-      <img src="assets/img/logo.png" alt="GenBionex" class="wordmark__logo">
+      <img src="assets/img/logo.png" alt="GenBionex - Unlocking Your Farm Potential" class="wordmark__logo">
     </a>
     <nav class="nav-primary" aria-label="Primary">
       <ul class="nav-primary__links">
@@ -63,7 +64,21 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
-      <a class="btn btn--accent" href="contact.html">Talk to us</a>
+      <a class="header-call" href="tel:+256788701773">
+        <span class="header-call__icon">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 3 3 5 6 6l2-2 5 2v2c0 1-1 2-2 2C10 20 4 14 4 5Z"/></svg>
+        </span>
+        <span class="header-call__text">
+          <span>Call Now</span>
+          <strong>+256 788701773</strong>
+        </span>
+      </a>
+      <a class="header-cta" href="contact.html">
+        Talk to us
+        <span class="header-cta__arrow">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </span>
+      </a>
     </nav>
     <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="menu-sheet">
       Menu
@@ -71,6 +86,7 @@
   </div>
 </header>
 
+<!-- Mobile Navigation Drawer -->
 <div class="menu-sheet" id="menu-sheet" data-menu-sheet>
   <div class="menu-sheet__top">
     <span class="wordmark">
@@ -87,171 +103,661 @@
     </ul>
   </nav>
   <div class="menu-sheet__cta">
-    <a class="btn btn--accent" href="contact.html">Talk to us</a>
+    <a class="btn btn--accent" href="contact.html" style="width: 100%;">Talk to a breeding advisor</a>
   </div>
 </div>
 
 <main id="main">
 
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="wrap hero__single reveal">
-      <p class="eyebrow">Livestock genetics consultancy — Uganda</p>
-      <h1>A clear line to a <span class="highlight">stronger</span> herd.</h1>
-      <p class="hero__sub">Professional breeding and herd management services built on scientific evidence.</p>
-      <p class="hero__legal-name">GenBionex Consulting Company Ltd</p>
-      <div class="btn-row">
-        <a class="btn btn--accent" href="contact.html">Talk to a breeding advisor</a>
-        <a class="call-badge" href="tel:+256788701773">
-          <span class="call-badge__icon">
-            <svg class="icon" viewBox="0 0 24 24" width="20" height="20"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 3 3 5 6 6l2-2 5 2v2c0 1-1 2-2 2C10 20 4 14 4 5Z"/></svg>
-          </span>
-          <span class="call-badge__text">Call us<strong>+256 788701773</strong></span>
-        </a>
+    <div class="wrap hero__inner">
+      <div class="hero__content reveal">
+        <h1>A clear line to a <em>stronger, higher-yielding</em> herd.</h1>
+        <p class="hero__sub">Professional breeding and herd management services built on scientific evidence, genomic technology, and tailored nutrition for Ugandan livestock enterprises.</p>
+
+        <div class="btn-row">
+          <a class="btn btn--accent" href="contact.html">Talk to a breeding advisor</a>
+          <a class="hero__link" href="services.html">
+            Explore our services
+            <svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__float hero__float--top reveal">
+        <div class="hero__float-lines">
+          <span>Field-verified protocols</span>
+          <span>On-farm DNA sampling</span>
+          <span>Tailored enterprise models</span>
+        </div>
+        <span class="hero__float-check">✓</span>
+      </div>
+
+      <div class="hero__float hero__float--bottom reveal">
+        <span class="hero__float-number" data-contact-count>148+</span>
+        <span class="hero__float-label">Farm enterprises supported across Uganda</span>
       </div>
     </div>
   </section>
 
+  <!-- Trust / Key Pillars Strip -->
+  <section class="trust-strip">
+    <div class="wrap trust-strip__grid reveal">
+      <div class="trust-item">
+        <div class="trust-item__icon">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-8 9 8"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        </div>
+        <div>
+          <h4>5 Core Service Areas</h4>
+          <p>Integrated advisory, breeding, genetics, labs, and nutrition.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 11h6M9 15h6M9 8h3"/></svg>
+        </div>
+        <div>
+          <h4>Written Breeding Goals</h4>
+          <p>Clear priority traits and realistic milestones you keep.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20"><path d="M7 3c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 3c0 4-10 4-10 8s10 4 10 8"/><path d="M8 7h8M7.5 12h9M8 17h8"/></svg>
+        </div>
+        <div>
+          <h4>DNA &amp; Genomic Rigour</h4>
+          <p>On-farm sampling, genotyping, and parentage verification.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div>
+          <h4>Uganda-Wide Support</h4>
+          <p>Serving commercial ranches, dairies, and breeding farms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Core Visual Service Cards -->
   <section class="section section--cream">
     <div class="wrap">
       <div class="section-head section-head--split reveal">
         <div>
-          <p class="eyebrow">Our Services</p>
+          <p class="eyebrow">Our Core Pillars</p>
+          <h2>Five dimensions of a thriving livestock enterprise.</h2>
         </div>
-        <p class="lede">Explore integrated advisory, breeding, laboratory, and nutritional support tailored towards your herd needs.</p>
+        <p class="lede">Every service connects field-tested agricultural management with modern genetic science to eliminate guesswork and maximize herd profitability.</p>
       </div>
+
       <div class="grid grid--5">
-        <div class="feature-card feature-card--white reveal">
-          <span class="feature-card__icon">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 11h6M9 15h6M9 8h3"/></svg>
-          </span>
-          <h3>Integrated Farm Advisory</h3>
-          <p>Get expert advice on farm planning, enterprise evaluation, and day-to-day management of your farm enterprise.</p>
-          <a class="feature-card__link" href="services.html#advisory">Explore more
-            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+        
+        <!-- Card 1: Advisory -->
+        <div class="visual-card visual-card--blue reveal">
+          <div class="visual-card__media">
+            <picture>
+              <source srcset="assets/img/farm-advisory-field.webp" type="image/webp">
+              <img src="assets/img/farm-advisory-field.jpg" alt="Agricultural consultant reviewing farm records with a dairy farmer in Uganda" width="400" height="250" loading="lazy">
+            </picture>
+            <span class="visual-card__tag">Advisory</span>
+          </div>
+          <div class="visual-card__body">
+            <div class="visual-card__header">
+              <span class="visual-card__icon">
+                <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 11h6M9 15h6M9 8h3"/></svg>
+              </span>
+              <h3>Integrated Farm Advisory</h3>
+            </div>
+            <p class="visual-card__desc">Strategic guidance on farm layout, enterprise economic evaluation, and daily herd operations.</p>
+            <ul class="visual-card__deliverables">
+              <li><span class="bullet">✓</span> Housing and handling structure review</li>
+              <li><span class="bullet">✓</span> Farm planning &amp; initial enterprise setup</li>
+              <li><span class="bullet">✓</span> Production cost &amp; benchmark audit</li>
+            </ul>
+            <a class="visual-card__link" href="services.html#advisory">
+              <span>Explore advisory</span>
+              <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="feature-card feature-card--lime reveal">
-          <span class="feature-card__icon">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M7 3c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 3c0 4-10 4-10 8s10 4 10 8"/><path d="M8 7h8M7.5 12h9M8 17h8"/></svg>
-          </span>
-          <h3>Breeding</h3>
-          <p>Set clear breeding goals for your farm enterprise.</p>
-          <a class="feature-card__link" href="services.html#breeding">Explore more
-            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+
+        <!-- Card 2: Breeding -->
+        <div class="visual-card visual-card--green reveal">
+          <div class="visual-card__media">
+            <picture>
+              <source srcset="assets/img/breeding-selection-bull.webp" type="image/webp">
+              <img src="assets/img/breeding-selection-bull.jpg" alt="Champion Ankole breeding bull standing in a paddock" width="400" height="250" loading="lazy">
+            </picture>
+            <span class="visual-card__tag">Breeding</span>
+          </div>
+          <div class="visual-card__body">
+            <div class="visual-card__header">
+              <span class="visual-card__icon">
+                <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><path d="M7 3c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 3c0 4-10 4-10 8s10 4 10 8"/><path d="M8 7h8M7.5 12h9M8 17h8"/></svg>
+              </span>
+              <h3>Precision Breeding</h3>
+            </div>
+            <p class="visual-card__desc">Set clear, measurable breeding goals and source verified breeding stock with confidence.</p>
+            <ul class="visual-card__deliverables">
+              <li><span class="bullet">✓</span> Written breeding goal development</li>
+              <li><span class="bullet">✓</span> Sourcing and selection of breeding bulls</li>
+              <li><span class="bullet">✓</span> Pre-purchase animal health &amp; trait audit</li>
+            </ul>
+            <a class="visual-card__link" href="services.html#breeding">
+              <span>Explore breeding</span>
+              <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="feature-card feature-card--dark reveal">
-          <span class="feature-card__icon">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M7 3c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 3c0 4-10 4-10 8s10 4 10 8"/><path d="M8 7h8M7.5 12h9M8 17h8"/></svg>
-          </span>
-          <h3>Genetics</h3>
-          <p>Integrate modern genetic and genomic services in your breeding.</p>
-          <a class="feature-card__link" href="services.html#genetics">Explore more
-            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+
+        <!-- Card 3: Genetics -->
+        <div class="visual-card visual-card--purple reveal">
+          <div class="visual-card__media">
+            <picture>
+              <source srcset="assets/img/genetics-lab-analysis.webp" type="image/webp">
+              <img src="assets/img/genetics-lab-analysis.jpg" alt="Scientist analyzing DNA samples in a veterinary molecular genetics laboratory" width="400" height="250" loading="lazy">
+            </picture>
+            <span class="visual-card__tag">Genetics</span>
+          </div>
+          <div class="visual-card__body">
+            <div class="visual-card__header">
+              <span class="visual-card__icon">
+                <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><path d="M7 3c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 3c0 4-10 4-10 8s10 4 10 8"/><path d="M8 7h8M7.5 12h9M8 17h8"/></svg>
+              </span>
+              <h3>Genomics &amp; DNA Services</h3>
+            </div>
+            <p class="visual-card__desc">Integrate DNA testing, parentage verification, and genomic estimated breeding values into your herd.</p>
+            <ul class="visual-card__deliverables">
+              <li><span class="bullet">✓</span> On-farm DNA sample collection</li>
+              <li><span class="bullet">✓</span> Genotyping and parentage verification</li>
+              <li><span class="bullet">✓</span> Animal ownership dispute resolution</li>
+            </ul>
+            <a class="visual-card__link" href="services.html#genetics">
+              <span>Explore genetics</span>
+              <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="feature-card feature-card--white reveal">
-          <span class="feature-card__icon">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M20 4C10 4 4 10 4 18c0 1.1.9 2 2 2 8 0 14-6 14-16Z"/><path d="M6 20c4-4 8-8 13-15"/></svg>
-          </span>
-          <h3>Nutrition</h3>
-          <p>Get feeds and feeding consultations tailored to your farm enterprise.</p>
-          <a class="feature-card__link" href="services.html#nutrition">Explore more
-            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+
+        <!-- Card 4: Nutrition -->
+        <div class="visual-card visual-card--blue reveal">
+          <div class="visual-card__media">
+            <picture>
+              <source srcset="assets/img/livestock-nutrition-feed.webp" type="image/webp">
+              <img src="assets/img/livestock-nutrition-feed.jpg" alt="Livestock nutritionist inspecting formulated silage feed in dairy barn" width="400" height="250" loading="lazy">
+            </picture>
+            <span class="visual-card__tag">Nutrition</span>
+          </div>
+          <div class="visual-card__body">
+            <div class="visual-card__header">
+              <span class="visual-card__icon">
+                <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><path d="M20 4C10 4 4 10 4 18c0 1.1.9 2 2 2 8 0 14-6 14-16Z"/><path d="M6 20c4-4 8-8 13-15"/></svg>
+              </span>
+              <h3>Feeds &amp; Nutrition</h3>
+            </div>
+            <p class="visual-card__desc">Scientifically formulated rations matched to lactation, growth stages, and locally available forage.</p>
+            <ul class="visual-card__deliverables">
+              <li><span class="bullet">✓</span> Ration review and feeding plan design</li>
+              <li><span class="bullet">✓</span> Local feed resource cost-benefit analysis</li>
+              <li><span class="bullet">✓</span> Pasture and silage management support</li>
+            </ul>
+            <a class="visual-card__link" href="services.html#nutrition">
+              <span>Explore nutrition</span>
+              <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="feature-card feature-card--lime reveal">
-          <span class="feature-card__icon">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24"><path d="M10 2v6.5L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V2"/><path d="M8.5 2h7M7 16h10"/></svg>
-          </span>
-          <h3>Laboratory and Equipment</h3>
-          <p>Get guidance and support with laboratory setup, reliable equipment and consumables.</p>
-          <a class="feature-card__link" href="services.html#laboratory">Explore more
-            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+
+        <!-- Card 5: Lab & Equipment -->
+        <div class="visual-card visual-card--green reveal">
+          <div class="visual-card__media">
+            <picture>
+              <source srcset="assets/img/lab-biomedical-equipment.webp" type="image/webp">
+              <img src="assets/img/lab-biomedical-equipment.jpg" alt="Biomedical lab equipment, liquid nitrogen tanks, and centrifuges" width="400" height="250" loading="lazy">
+            </picture>
+            <span class="visual-card__tag">Laboratory</span>
+          </div>
+          <div class="visual-card__body">
+            <div class="visual-card__header">
+              <span class="visual-card__icon">
+                <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><path d="M10 2v6.5L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V2"/><path d="M8.5 2h7M7 16h10"/></svg>
+              </span>
+              <h3>Lab &amp; Biomedical Equipment</h3>
+            </div>
+            <p class="visual-card__desc">Complete guidance on breeding support labs, equipment procurement, cryo-storage, and consumables.</p>
+            <ul class="visual-card__deliverables">
+              <li><span class="bullet">✓</span> Breeding support laboratory setup advice</li>
+              <li><span class="bullet">✓</span> Biomedical equipment supply &amp; maintenance</li>
+              <li><span class="bullet">✓</span> Lab consumables restocking &amp; protocols</li>
+            </ul>
+            <a class="visual-card__link" href="services.html#laboratory">
+              <span>Explore lab services</span>
+              <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
+  <!-- Interactive Livestock Enterprise Strategy Explorer -->
   <section class="section section--white">
-    <div class="wrap prose">
-      <div class="reveal">
-        <p class="eyebrow">Working with us</p>
-        <h2>What working with us includes.</h2>
-        <p class="lede" style="margin-top: var(--space-3);">Every engagement is built for your scale, your market, and your animals — nothing templated.</p>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Enterprise Strategy Explorer</p>
+          <h2>Tailored pathways for your specific livestock enterprise.</h2>
+          <p class="lede">Select your enterprise to see how GenBionex combines breeding goals, nutrition, and genetics for your herd.</p>
+        </div>
+      </div>
+
+      <div class="strategy-explorer reveal">
+        <div class="strategy-tabs" role="tablist" aria-label="Livestock Enterprise Tabs">
+          <button class="strategy-tab is-active" data-strategy-tab="dairy" role="tab" aria-selected="true">Dairy Cattle</button>
+          <button class="strategy-tab" data-strategy-tab="beef" role="tab" aria-selected="false">Beef &amp; Ankole</button>
+          <button class="strategy-tab" data-strategy-tab="goats" role="tab" aria-selected="false">Goats &amp; Small Ruminants</button>
+          <button class="strategy-tab" data-strategy-tab="swine" role="tab" aria-selected="false">Commercial Swine</button>
+          <button class="strategy-tab" data-strategy-tab="labs" role="tab" aria-selected="false">Breeding Lab &amp; AI</button>
+        </div>
+
+        <!-- Panel 1: Dairy -->
+        <div class="strategy-panel is-active" data-strategy-panel="dairy" role="tabpanel">
+          <div class="strategy-panel__content">
+            <h3>Dairy Cattle Enterprise</h3>
+            <p class="lede">Maximize daily milk production, reproductive efficiency, and mastitis resistance through structured breeding indices and balanced lactation rations.</p>
+            <ul class="strategy-points">
+              <li class="strategy-point">
+                <span class="strategy-point__icon">1</span>
+                <div>
+                  <strong>Linear Trait Scoring &amp; Sire Selection</strong>
+                  <span>Evaluate udder conformation, feet/legs, and milk components before insemination.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">2</span>
+                <div>
+                  <strong>Stage-Specific TMR Ration Formulation</strong>
+                  <span>Formulate high-yield feed balances using local silage, hay, concentrates, and minerals.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">3</span>
+                <div>
+                  <strong>Heifer Genomic Profiling</strong>
+                  <span>Identify the top replacement heifers early with DNA genotyping.</span>
+                </div>
+              </li>
+            </ul>
+            <a class="btn btn--solid-dark" href="contact.html?service=dairy">Request dairy herd consultation</a>
+          </div>
+          <div class="strategy-panel__card">
+            <h4>Expected Enterprise Deliverables</h4>
+            <ul>
+              <li>Written 3-year breeding roadmap</li>
+              <li>Lactation and dry-period feed protocols</li>
+              <li>Calf rearing &amp; colostrum management audit</li>
+              <li>Quarterly herd performance reviews</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panel 2: Beef -->
+        <div class="strategy-panel" data-strategy-panel="beef" role="tabpanel">
+          <div class="strategy-panel__content">
+            <h3>Beef, Ankole &amp; Crossbreeding</h3>
+            <p class="lede">Enhance average daily weight gain, pasture hardiness, and carcass conformation while preserving valuable indigenous genetics.</p>
+            <ul class="strategy-points">
+              <li class="strategy-point">
+                <span class="strategy-point__icon">1</span>
+                <div>
+                  <strong>Pedigree Purity &amp; Conformation Scoring</strong>
+                  <span>Objective evaluation of horn symmetry, body depth, and breed character for Ankole &amp; Boran.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">2</span>
+                <div>
+                  <strong>Crossbreeding Scheme Design</strong>
+                  <span>Structured terminal or rotational crossing (e.g. Boran × Sahiwal × Simmental) without losing herd resilience.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">3</span>
+                <div>
+                  <strong>Dry-Season Pasture &amp; Supplementation Strategy</strong>
+                  <span>Rotational grazing schedules and mineral lick protocols to prevent dry-period weight loss.</span>
+                </div>
+              </li>
+            </ul>
+            <a class="btn btn--solid-dark" href="contact.html?service=beef">Request beef ranch consultation</a>
+          </div>
+          <div class="strategy-panel__card">
+            <h4>Expected Enterprise Deliverables</h4>
+            <ul>
+              <li>Bull breeding soundness evaluations</li>
+              <li>Pasture carrying capacity assessments</li>
+              <li>Ranch handling corral layout plans</li>
+              <li>Purity &amp; parentage DNA reports</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panel 3: Goats -->
+        <div class="strategy-panel" data-strategy-panel="goats" role="tabpanel">
+          <div class="strategy-panel__content">
+            <h3>Goats &amp; Small Ruminants</h3>
+            <p class="lede">Optimize kid growth rates, prolificacy (twinning rates), and milk yields for Boer, Toggenburg, Savanna, and Mubende herds.</p>
+            <ul class="strategy-points">
+              <li class="strategy-point">
+                <span class="strategy-point__icon">1</span>
+                <div>
+                  <strong>Breeding Buck Selection &amp; Linebreeding Control</strong>
+                  <span>Prevent inbreeding depression with verified pedigree tracking and buck rotation.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">2</span>
+                <div>
+                  <strong>Raised Slatted Housing &amp; Biosecurity Design</strong>
+                  <span>Reduce parasite burden, foot rot, and kid mortality with optimal housing.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">3</span>
+                <div>
+                  <strong>Fodder Bank Formulation</strong>
+                  <span>High-protein forage banks (Calliandra, Leucaena, Brachiaria) for uninterrupted growth.</span>
+                </div>
+              </li>
+            </ul>
+            <a class="btn btn--solid-dark" href="contact.html?service=goats">Request goat enterprise plan</a>
+          </div>
+          <div class="strategy-panel__card">
+            <h4>Expected Enterprise Deliverables</h4>
+            <ul>
+              <li>Buck rotation schedules</li>
+              <li>Kid survival protocols</li>
+              <li>Intensive fodder bank layout</li>
+              <li>Target weight-for-age benchmarks</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panel 4: Swine -->
+        <div class="strategy-panel" data-strategy-panel="swine" role="tabpanel">
+          <div class="strategy-panel__content">
+            <h3>Commercial Swine Systems</h3>
+            <p class="lede">Improve feed conversion ratios (FCR), litter size at weaning, and strict biosecurity to safeguard intensive piggery investments.</p>
+            <ul class="strategy-points">
+              <li class="strategy-point">
+                <span class="strategy-point__icon">1</span>
+                <div>
+                  <strong>Farrowing &amp; Genetic Line Sourcing</strong>
+                  <span>Parent stock selection (Large White, Landrace, Duroc) for lean meat and mothering ability.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">2</span>
+                <div>
+                  <strong>Feed Least-Cost Formulation</strong>
+                  <span>Balanced amino acid diets that reduce cost per kilogram of liveweight gain.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">3</span>
+                <div>
+                  <strong>Pen Ventilation &amp; Waste Management</strong>
+                  <span>Optimized pig housing layouts for disease containment and thermal comfort.</span>
+                </div>
+              </li>
+            </ul>
+            <a class="btn btn--solid-dark" href="contact.html?service=swine">Request swine advisory</a>
+          </div>
+          <div class="strategy-panel__card">
+            <h4>Expected Enterprise Deliverables</h4>
+            <ul>
+              <li>Least-cost diet recipes</li>
+              <li>Farrowing-to-finish production calendars</li>
+              <li>Biosecurity barrier protocols</li>
+              <li>Breeding stock quarantine standards</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panel 5: Labs -->
+        <div class="strategy-panel" data-strategy-panel="labs" role="tabpanel">
+          <div class="strategy-panel__content">
+            <h3>Breeding Lab Setup &amp; AI Stations</h3>
+            <p class="lede">Set up compliant, functional on-farm or commercial artificial insemination, embryo, and genetic testing laboratory infrastructure.</p>
+            <ul class="strategy-points">
+              <li class="strategy-point">
+                <span class="strategy-point__icon">1</span>
+                <div>
+                  <strong>Cleanroom Workflow &amp; Bench Layout</strong>
+                  <span>Design separation of processing, sterilization, and storage zones.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">2</span>
+                <div>
+                  <strong>Cryogenic &amp; Analytical Equipment Sourcing</strong>
+                  <span>Procurement of LN2 tanks, centrifuges, thermal cyclers, and microscopes.</span>
+                </div>
+              </li>
+              <li class="strategy-point">
+                <span class="strategy-point__icon">3</span>
+                <div>
+                  <strong>Standard Operating Procedures (SOPs)</strong>
+                  <span>Written SOPs for sample tracking, cryopreservation, and quality assurance.</span>
+                </div>
+              </li>
+            </ul>
+            <a class="btn btn--solid-dark" href="contact.html?service=laboratory">Request lab setup advisory</a>
+          </div>
+          <div class="strategy-panel__card">
+            <h4>Expected Enterprise Deliverables</h4>
+            <ul>
+              <li>Equipment specification &amp; bill of quantities</li>
+              <li>Laboratory biosafety blueprints</li>
+              <li>Technician training guidelines</li>
+              <li>Consumable inventory schedules</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- The GenBionex Advantage (Split Story Section) -->
+  <section class="section section--cream">
+    <div class="wrap split">
+      <div class="split__media reveal">
+        <picture>
+          <source srcset="assets/img/about-ankole-cattle.webp" type="image/webp">
+          <img src="assets/img/about-ankole-cattle.jpg" alt="Aerial view of herd of Ankole cattle at watering point on a Ugandan ranch" width="600" height="450" loading="lazy">
+        </picture>
+        <div class="split__chip">
+          <div class="split__chip-icon">
+            <svg class="icon" viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <strong>Genetic Rigour</strong>
+            <span>Working-farm scale across Uganda</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="split__content reveal">
+        <p class="eyebrow">Working with GenBionex</p>
+        <h2>Scientific rigour meets working-farm scale.</h2>
+        <p class="lede" style="margin-top: var(--space-3);">Every engagement is built around your specific farm size, your ecological zone, and your target commercial market — nothing templated, nothing based on unverified guesswork.</p>
+        
         <ul class="chip-list">
           <li>Plans built for your scale</li>
-          <li>Scheduled farm visits</li>
+          <li>Scheduled on-farm visits</li>
           <li>Written protocols you keep</li>
           <li>Herd data handled securely</li>
-          <li>Sourcing &amp; equipment support</li>
+          <li>Equipment &amp; consumables support</li>
+          <li>Independent pre-purchase animal evaluation</li>
           <li>Plain-language reporting</li>
         </ul>
+
+        <div style="margin-top: var(--space-5);">
+          <a class="btn btn--solid-dark" href="about.html">Learn more about our methodology</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- 4-Step Process Section -->
   <section class="section section--dark on-dark">
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <p class="eyebrow">How it works</p>
-          <h2>Four steps, start to review.</h2>
+          <p class="eyebrow">How It Works</p>
+          <h2>Four steps from initial audit to evaluated herd review.</h2>
         </div>
       </div>
       <ol class="step-list">
         <li class="step reveal">
+          <span class="step__num">Step 01</span>
           <span class="step__icon">
             <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><path d="M3 11l9-8 9 8"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
           </span>
-          <h3 class="h4">Farm visit &amp; baseline</h3>
-          <p>We visit your farm and record where your herd stands today.</p>
+          <h3>Farm Visit &amp; Baseline Audit</h3>
+          <p>We visit your farm, inspect animal condition, records, feeding systems, and record where your herd stands today.</p>
         </li>
         <li class="step reveal">
+          <span class="step__num">Step 02</span>
           <span class="step__icon">
             <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 11h6M9 15h6M9 8h3"/></svg>
           </span>
-          <h3 class="h4">Written breeding goal</h3>
-          <p>You receive a written breeding goal matched to your enterprise.</p>
+          <h3>Written Breeding &amp; Feed Goal</h3>
+          <p>You receive a written, prioritized breeding and nutritional strategy matched precisely to your enterprise targets.</p>
         </li>
         <li class="step reveal">
+          <span class="step__num">Step 03</span>
           <span class="step__icon">
             <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
           </span>
-          <h3 class="h4">Implementation</h3>
-          <p>We support you putting the plan and protocols into practice.</p>
+          <h3>Field Implementation</h3>
+          <p>We support you in putting the breeding protocols, DNA sampling, sire selection, and feeding adjustments into practice.</p>
         </li>
         <li class="step reveal">
+          <span class="step__num">Step 04</span>
           <span class="step__icon">
             <svg class="icon" viewBox="0 0 24 24" width="22" height="22"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
           </span>
-          <h3 class="h4">Evaluation &amp; review</h3>
-          <p>Progress is measured, reported plainly, and the goal is revisited.</p>
+          <h3>Evaluation &amp; Target Review</h3>
+          <p>Calf vigor, weight gains, and lactation performance are evaluated, reported plainly, and breeding goals are refined.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="section section--cream contact-band reveal">
-    <div class="wrap contact-band__row">
-      <div>
-        <p class="eyebrow">Get in touch</p>
-        <h2>Tell us about your herd.</h2>
+  <!-- FAQ Section -->
+  <section class="section section--white">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align: center; justify-items: center;">
+        <p class="eyebrow">Frequently Asked Questions</p>
+        <h2>Everything you need to know about working with GenBionex.</h2>
       </div>
-      <div class="btn-row">
-        <a class="btn btn--ghost-light" href="mailto:info@genbionex.ug">Email us</a>
-        <a class="btn btn--ghost-light" href="https://wa.me/256788701773">WhatsApp</a>
-        <a class="btn btn--accent" href="contact.html">Request a callback</a>
+
+      <div class="faq-accordion reveal">
+        <div class="faq-item is-open">
+          <button class="faq-trigger" type="button" aria-expanded="true">
+            <span>How does on-farm DNA sample collection work?</span>
+            <span class="faq-icon">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <p>Our qualified field personnel visit your farm and collect non-invasive or minimal tissue samples (such as hair follicles with root bulbs or ear tissue notches) under hygienic, stress-free handling. Samples are labeled with unique barcoded identifiers, securely logged into your herd ledger, and stored for genotyping and parentage validation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Can GenBionex help evaluate breeding bulls before I purchase them?</span>
+            <span class="faq-icon">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <p>Yes. We conduct independent pre-purchase evaluations on-site at the seller's farm. We inspect reproductive conformation, structural soundness, scrotal circumference, breed purity, and disease history against your farm's written breeding goal so you never invest in sub-optimal stock.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>What size farm or herd do I need to begin?</span>
+            <span class="faq-icon">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <p>We work with progressive emerging farmers with small herds (e.g. 5 to 20 head) establishing their first structured breeding plan, all the way to commercial cattle ranches and dairy enterprises with hundreds of animals. Every recommendation is tailored directly to your scale and capital budget.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>How do feeds and feeding consultations improve profitability?</span>
+            <span class="faq-icon">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <p>Feed constitutes over 65% of total livestock operating costs. By formulating least-cost rations that balance available on-farm grasses, silage, and local agro-byproducts with precise mineral and protein premixes, we help you eliminate feed wastage, boost milk yields, and accelerate fattening periods.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>How do you help resolve livestock parentage or pedigree disputes?</span>
+            <span class="faq-icon">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <p>Using molecular DNA markers, we can definitively establish sire and dam parentage with 99.9% statistical certainty. This provides legal and pedigree clarity for disputed breeding stock, prize bull sales, or purebred registry compliance.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--dark on-dark section--tight">
+  <!-- High-Impact CTA Band -->
+  <section class="section section--cream">
+    <div class="wrap">
+      <div class="contact-band reveal">
+        <div class="contact-band__row">
+          <div>
+            <h2>Ready to transform your herd's genetics and performance?</h2>
+            <p class="lede" style="color: rgba(245,242,231,0.85); margin-top: var(--space-2);">Speak with a senior GenBionex livestock breeding advisor today. We respond to all inquiries within two working days.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--accent" href="contact.html">Request a callback</a>
+            <a class="btn btn--ghost-dark" href="https://wa.me/256788701773">WhatsApp us</a>
+            <a class="btn btn--ghost-dark" href="tel:+256788701773">+256 788701773</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Counter Band -->
+  <section class="section section--dark-deep on-dark section--tight">
     <div class="wrap contact-counter__inner reveal">
-      <p class="eyebrow">Growing with Uganda's farms</p>
-      <p class="contact-counter__number" data-contact-count>—</p>
-      <p class="contact-counter__label">people have contacted us so far</p>
+      <p class="eyebrow">Growing with Uganda's Livestock Farmers</p>
+      <p class="contact-counter__number" data-contact-count>148+</p>
+      <p class="contact-counter__label">farm enterprises and livestock managers supported across Uganda</p>
     </div>
   </section>
 
@@ -262,12 +768,12 @@
     <div class="site-footer__grid">
       <div>
         <span class="wordmark">
-          <img src="assets/img/logo.png" alt="GenBionex" class="wordmark__logo">
+          <img src="assets/img/logo.png" alt="GenBionex - Unlocking Your Farm Potential" class="wordmark__logo">
         </span>
-        <p style="margin-top: var(--space-3); max-width: 32em;">GenBionex Consulting Company Ltd — professional livestock breeding and management services built on genetic technology, serving livestock enterprises across Uganda.</p>
+        <p style="margin-top: var(--space-3); max-width: 32em;">GenBionex Consulting Company Ltd — professional livestock breeding, genomic technologies, and farm enterprise advisory serving livestock enterprises across Uganda.</p>
       </div>
       <div>
-        <h2>Site</h2>
+        <h2>Navigation</h2>
         <ul class="site-footer__links">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Our Services</a></li>
@@ -280,13 +786,14 @@
         <ul class="site-footer__links">
           <li><a href="mailto:info@genbionex.ug">info@genbionex.ug</a></li>
           <li><a href="tel:+256788701773">+256 788701773</a></li>
-          <li><a href="https://wa.me/256788701773">WhatsApp</a></li>
+          <li><a href="https://wa.me/256788701773">WhatsApp: +256 788701773</a></li>
+          <li><span>Wakiso District, P.O. Box 748, Entebbe</span></li>
         </ul>
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>© 2026 GenBionex Consulting Company Ltd.</span>
-      <span>Designed by <a href="https://blactec.ug">blactec.ug</a></span>
+      <span>© 2026 GenBionex Consulting Company Ltd. All rights reserved.</span>
+      <span>Designed by <a href="https://blactec.ug" target="_blank" rel="noopener">blactec.ug</a></span>
     </div>
   </div>
 </footer>

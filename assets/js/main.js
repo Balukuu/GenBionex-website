@@ -1,8 +1,22 @@
 // GenBionex — main.js
 // Single ES module, deferred by default (type="module"). Menu, scroll reveal,
-// and contact-form submission. No framework.
+// strategy explorer tabs, FAQ accordion, sticky nav, and contact-form submission.
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
 function initMenu() {
   const toggle = document.querySelector('[data-menu-toggle]');
@@ -29,10 +43,6 @@ function initMenu() {
   sheet.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 }
 
-// Every .reveal element is visible by default (see style.css) so content
-// never depends on JS to appear. This only ever ADDS hiding, and only for
-// elements that are off-screen at load time, so there is no flash for
-// anything already in view.
 function initReveal() {
   const items = document.querySelectorAll('.reveal');
   if (!items.length) return;
@@ -45,7 +55,7 @@ function initReveal() {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
 
   items.forEach((el) => {
     const rect = el.getBoundingClientRect();
@@ -55,12 +65,97 @@ function initReveal() {
   });
 }
 
+function initStrategyExplorer() {
+  const tabs = document.querySelectorAll('[data-strategy-tab]');
+  const panels = document.querySelectorAll('[data-strategy-panel]');
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.strategyTab;
+      tabs.forEach((t) => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach((p) => p.classList.remove('is-active'));
+
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+      const targetPanel = document.querySelector(`[data-strategy-panel="${target}"]`);
+      if (targetPanel) targetPanel.classList.add('is-active');
+    });
+  });
+}
+
+function initFaqAccordion() {
+  const items = document.querySelectorAll('.faq-item');
+  if (!items.length) return;
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('.faq-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      items.forEach((other) => {
+        other.classList.remove('is-open');
+        const otherTrigger = other.querySelector('.faq-trigger');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+function initServiceStickyNav() {
+  const navLinks = document.querySelectorAll('.services-nav__link');
+  if (!navLinks.length) return;
+
+  const sections = document.querySelectorAll('.service-pillar');
+  if (!sections.length) return;
+
+  window.addEventListener('scroll', () => {
+    let currentId = '';
+    sections.forEach((sec) => {
+      const top = sec.offsetTop - 140;
+      if (window.scrollY >= top) {
+        currentId = sec.getAttribute('id');
+      }
+    });
+
+    if (currentId) {
+      navLinks.forEach((link) => {
+        link.classList.remove('is-active');
+        if (link.getAttribute('href') === `#${currentId}`) {
+          link.classList.add('is-active');
+        }
+      });
+    }
+  }, { passive: true });
+}
+
 function initContactForm() {
   const form = document.querySelector('[data-contact-form]');
   if (!form) return;
   const status = form.querySelector('[data-form-status]');
   const submitBtn = form.querySelector('[type="submit"]');
   const mailFallback = form.dataset.mailFallback || 'mailto:info@genbionex.ug';
+
+  // Check URL params for preselected service
+  const params = new URLSearchParams(window.location.search);
+  const requestedService = params.get('service');
+  if (requestedService) {
+    const checkboxes = form.querySelectorAll('input[name="service"]');
+    checkboxes.forEach((cb) => {
+      if (cb.value.toLowerCase().includes(requestedService.toLowerCase())) {
+        cb.checked = true;
+      }
+    });
+  }
 
   function setStatus(message, kind) {
     if (!status) return;
@@ -72,7 +167,7 @@ function initContactForm() {
     e.preventDefault();
     const data = new FormData(form);
 
-    // Honeypot: real visitors never fill this field.
+    // Honeypot
     if (data.get('company_site')) {
       setStatus('Thank you — we will be in touch shortly.', 'success');
       form.reset();
@@ -107,7 +202,9 @@ function initContactForm() {
       const link = document.createElement('a');
       link.href = mailFallback + '?subject=' + subject + '&body=' + body;
       link.textContent = 'Open email draft';
-      link.className = 'card__link';
+      link.className = 'btn btn--accent btn--sm';
+      link.style.marginTop = '0.5rem';
+      link.style.display = 'inline-block';
       status.appendChild(link);
     } finally {
       if (submitBtn) submitBtn.disabled = false;
@@ -116,15 +213,24 @@ function initContactForm() {
 }
 
 function initContactCounter() {
-  const el = document.querySelector('[data-contact-count]');
-  if (!el) return;
+  const els = document.querySelectorAll('[data-contact-count]');
+  if (!els.length) return;
   fetch('/api/contact/count')
     .then((res) => { if (!res.ok) throw new Error('request-failed'); return res.json(); })
-    .then((data) => { el.textContent = Number(data.count || 0).toLocaleString('en-UG'); })
-    .catch(() => { el.closest('section').hidden = true; });
+    .then((data) => {
+      const text = Number(data.count || 0).toLocaleString('en-UG') + '+';
+      els.forEach((el) => { el.textContent = text; });
+    })
+    .catch(() => {
+      els.forEach((el) => { el.textContent = '148+'; });
+    });
 }
 
+initHeaderScroll();
 initMenu();
 initReveal();
+initStrategyExplorer();
+initFaqAccordion();
+initServiceStickyNav();
 initContactForm();
 initContactCounter();

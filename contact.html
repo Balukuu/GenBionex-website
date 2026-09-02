@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact Us — GenBionex Consulting Company Ltd</title>
-<meta name="description" content="Talk to a GenBionex breeding advisor. Email info@genbionex.ug or send a message about your herd, farm enterprise, or genetic services needs.">
+<meta name="description" content="Talk to a GenBionex livestock breeding advisor. Email info@genbionex.ug or submit an enquiry about your herd, enterprise goals, or genetic testing needs.">
 <link rel="canonical" href="https://genbionex.ug/contact.html">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <meta name="theme-color" content="#0E2A20">
@@ -48,11 +48,11 @@
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
-
+<!-- Main Sticky Header -->
 <header class="site-header">
   <div class="wrap site-header__bar">
     <a class="wordmark" href="index.html">
-      <img src="assets/img/logo.png" alt="GenBionex" class="wordmark__logo">
+      <img src="assets/img/logo.png" alt="GenBionex - Unlocking Your Farm Potential" class="wordmark__logo">
     </a>
     <nav class="nav-primary" aria-label="Primary">
       <ul class="nav-primary__links">
@@ -61,7 +61,21 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html" aria-current="page">Contact Us</a></li>
       </ul>
-      <a class="btn btn--accent" href="contact.html">Talk to us</a>
+      <a class="header-call" href="tel:+256788701773">
+        <span class="header-call__icon">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 3 3 5 6 6l2-2 5 2v2c0 1-1 2-2 2C10 20 4 14 4 5Z"/></svg>
+        </span>
+        <span class="header-call__text">
+          <span>Call Now</span>
+          <strong>+256 788701773</strong>
+        </span>
+      </a>
+      <a class="header-cta" href="contact.html">
+        Talk to us
+        <span class="header-cta__arrow">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </span>
+      </a>
     </nav>
     <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="menu-sheet">
       Menu
@@ -69,6 +83,7 @@
   </div>
 </header>
 
+<!-- Mobile Navigation Drawer -->
 <div class="menu-sheet" id="menu-sheet" data-menu-sheet>
   <div class="menu-sheet__top">
     <span class="wordmark">
@@ -85,26 +100,30 @@
     </ul>
   </nav>
   <div class="menu-sheet__cta">
-    <a class="btn btn--accent" href="contact.html">Talk to us</a>
+    <a class="btn btn--accent" href="contact.html" style="width: 100%;">Talk to a breeding advisor</a>
   </div>
 </div>
 
 <main id="main">
 
-  <section class="section section--dark on-dark section--tight">
+  <!-- Hero Banner -->
+  <section class="section section--dark on-dark section--tight page-hero">
     <div class="wrap">
-      <p class="eyebrow reveal">Contact us</p>
-      <h1 class="reveal">Contact GenBionex</h1>
-      <p class="lede reveal">Tell us about your herd, farm, or enterprise and we'll get back to you within two working days.</p>
+      <span class="eyebrow-pill reveal">Connect With Us</span>
+      <h1 class="reveal">Talk to a GenBionex Breeding Advisor</h1>
+      <p class="lede reveal">Tell us about your herd, enterprise goals, or laboratory setup needs. Our senior consulting team will get back to you within two working days.</p>
     </div>
   </section>
 
+  <!-- Main Contact Section -->
   <section class="section section--cream">
     <div class="wrap contact-grid">
 
-      <div class="reveal">
+      <!-- Contact Form -->
+      <div class="reveal" style="background: var(--white); padding: var(--space-6); border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
         <form data-contact-form data-mail-fallback="mailto:info@genbionex.ug" action="mailto:info@genbionex.ug" method="get" novalidate>
 
+          <!-- Honeypot -->
           <div class="hp-field" aria-hidden="true">
             <label for="company_site">Leave this field empty</label>
             <input type="text" id="company_site" name="company_site" tabindex="-1" autocomplete="off">
@@ -112,90 +131,107 @@
 
           <div class="field-row">
             <div class="field field--required">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required autocomplete="name">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. Dr. John / Sarah Mugisha" required autocomplete="name">
             </div>
             <div class="field field--required">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required autocomplete="email">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="e.g. sarah@farm.ug" required autocomplete="email">
             </div>
           </div>
 
           <div class="field-row">
             <div class="field">
-              <label for="organisation">Organisation</label>
-              <input type="text" id="organisation" name="organisation" autocomplete="organization">
+              <label for="organisation">Farm / Organisation Name</label>
+              <input type="text" id="organisation" name="organisation" placeholder="e.g. Rwizi Ranch / Green Valley Dairy" autocomplete="organization">
             </div>
             <div class="field field--required">
-              <label for="district">District</label>
-              <input type="text" id="district" name="district" required>
+              <label for="district">District / Region in Uganda</label>
+              <input type="text" id="district" name="district" placeholder="e.g. Kiruhura, Mbarara, Wakiso, Nakasongola" required>
             </div>
           </div>
 
           <div class="field">
-            <label for="enterprise">Enterprise</label>
-            <input type="text" id="enterprise" name="enterprise" placeholder="e.g. dairy, beef, poultry">
+            <label for="enterprise">Enterprise Type &amp; Approximate Herd Size</label>
+            <input type="text" id="enterprise" name="enterprise" placeholder="e.g. Dairy cattle (40 cows), Ankole beef ranch (200 head), Boer goats, Lab setup">
           </div>
 
           <fieldset class="check-group">
             <legend>Service interest — select all that apply</legend>
 
-            <p class="check-group__area">Advisory &amp; Farm Systems</p>
-            <label class="check-option"><input type="checkbox" name="service" value="Professional advice on farm animal management">Professional advice on farm animal management</label>
-            <label class="check-option"><input type="checkbox" name="service" value="Farm planning">Farm planning</label>
-            <label class="check-option"><input type="checkbox" name="service" value="Farm enterprise evaluation">Farm enterprise evaluation</label>
+            <p class="check-group__area">1. Advisory &amp; Farm Systems</p>
+            <label class="check-option"><input type="checkbox" name="service" value="Professional advice on farm animal management"> Professional advice on farm animal management</label>
+            <label class="check-option"><input type="checkbox" name="service" value="Farm planning — initial setup"> Farm planning &amp; initial setup</label>
+            <label class="check-option"><input type="checkbox" name="service" value="Farm enterprise evaluation"> Farm enterprise evaluation</label>
 
-            <p class="check-group__area">Breeding</p>
-            <label class="check-option"><input type="checkbox" name="service" value="Setting and refining breeding goals">Setting and refining breeding goals</label>
-            <label class="check-option"><input type="checkbox" name="service" value="Sourcing and selection of breeding animals">Sourcing and selection of breeding animals</label>
+            <p class="check-group__area">2. Precision Breeding</p>
+            <label class="check-option"><input type="checkbox" name="service" value="Setting and refining breeding goals"> Setting &amp; refining breeding goals</label>
+            <label class="check-option"><input type="checkbox" name="service" value="Sourcing and selection of breeding animals"> Sourcing &amp; pre-purchase selection of breeding animals</label>
 
-            <p class="check-group__area">Genetics</p>
-            <label class="check-option"><input type="checkbox" name="service" value="Genetic services">Genetic services</label>
+            <p class="check-group__area">3. Genetics &amp; Genomics</p>
+            <label class="check-option"><input type="checkbox" name="service" value="Genetic services & DNA collection"> Genetic services, on-farm DNA collection &amp; parentage testing</label>
 
-            <p class="check-group__area">Laboratory &amp; Equipment</p>
-            <label class="check-option"><input type="checkbox" name="service" value="Advice on setting up a breeding support laboratory">Advice on setting up a breeding support laboratory</label>
-            <label class="check-option"><input type="checkbox" name="service" value="Supply and maintenance of biomedical equipment">Supply and maintenance of biomedical equipment</label>
+            <p class="check-group__area">4. Feeds &amp; Nutrition</p>
+            <label class="check-option"><input type="checkbox" name="service" value="Feeds and feeding consultations"> Feeds and feeding consultations (Ration balancing &amp; fodder)</label>
 
-            <p class="check-group__area">Nutrition</p>
-            <label class="check-option"><input type="checkbox" name="service" value="Feeds and feeding consultations">Feeds and feeding consultations</label>
+            <p class="check-group__area">5. Laboratory &amp; Equipment</p>
+            <label class="check-option"><input type="checkbox" name="service" value="Advice on setting up breeding lab"> Advice on setting up a breeding support laboratory</label>
+            <label class="check-option"><input type="checkbox" name="service" value="Biomedical equipment & consumables"> Supply and maintenance of biomedical equipment &amp; consumables</label>
           </fieldset>
 
           <div class="field field--required">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="message">How can we assist your herd or enterprise?</label>
+            <textarea id="message" name="message" placeholder="Please describe your current herd challenges, target breeding goals, or specific services needed..." required></textarea>
           </div>
 
           <div class="form-status" data-form-status aria-live="polite" role="status"></div>
 
-          <button type="submit" class="btn btn--accent">Send message</button>
-          <p style="margin-top: var(--space-3); font-size: var(--text-sm); font-weight: 600; color: var(--ink);">Or email us directly: <a href="mailto:info@genbionex.ug" style="text-decoration: none;">info@genbionex.ug</a></p>
+          <button type="submit" class="btn btn--accent" style="width: 100%;">Send consultation request</button>
+          <p style="margin-top: var(--space-4); font-size: var(--text-xs); color: var(--gray); text-align: center;">
+            Prefer direct email? Reach us at <a href="mailto:info@genbionex.ug" style="font-weight: 700; color: var(--ink);">info@genbionex.ug</a>
+          </p>
         </form>
       </div>
 
-      <div class="reveal contact-details">
-        <div class="section--dark on-dark" style="padding: var(--space-5); border-radius: var(--radius-lg);">
-          <dl>
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:info@genbionex.ug">info@genbionex.ug</a></dd>
-            </div>
-            <div>
-              <dt>Phone</dt>
-              <dd><a href="tel:+256788701773">+256 788701773</a></dd>
-            </div>
-            <div>
-              <dt>WhatsApp</dt>
-              <dd><a href="https://wa.me/256788701773">+256 788701773</a></dd>
-            </div>
-            <div>
-              <dt>Address</dt>
-              <dd>Wakiso District, P.O. Box 748, Entebbe</dd>
-            </div>
-            <div>
-              <dt>Service area</dt>
-              <dd>Livestock enterprises across Uganda</dd>
-            </div>
-          </dl>
+      <!-- Contact Details Sidebar -->
+      <div class="reveal contact-card-premium">
+        <div>
+          <span class="eyebrow-pill" style="color: var(--lime); background: rgba(174,227,82,0.15);">Direct Contact</span>
+          <h2 style="color: var(--white); font-size: var(--text-xl); margin-top: var(--space-2);">GenBionex Consulting Company Ltd</h2>
+          <p style="color: rgba(245,242,231,0.75); font-size: var(--text-sm); margin-top: var(--space-1);">Our consulting headquarters and advisory field team.</p>
+        </div>
+
+        <dl>
+          <div>
+            <dt>Official Email</dt>
+            <dd><a href="mailto:info@genbionex.ug">info@genbionex.ug</a></dd>
+          </div>
+          <div>
+            <dt>Phone Hotline</dt>
+            <dd><a href="tel:+256788701773">+256 788701773</a></dd>
+          </div>
+          <div>
+            <dt>WhatsApp Advisory Desk</dt>
+            <dd><a href="https://wa.me/256788701773" target="_blank" rel="noopener">+256 788701773</a></dd>
+          </div>
+          <div>
+            <dt>Postal &amp; Registered Address</dt>
+            <dd>Wakiso District, P.O. Box 748, Entebbe, Uganda</dd>
+          </div>
+          <div>
+            <dt>Advisory Geographic Scope</dt>
+            <dd>Livestock ranches and dairy farms across Uganda</dd>
+          </div>
+        </dl>
+
+        <div class="contact-card__guarantee">
+          <strong style="color: var(--lime); display: block; margin-bottom: 2px;">Two-Day Response Commitment</strong>
+          <span>Every farm inquiry is reviewed by our lead breeding and farm systems specialists with a prompt, confidential reply.</span>
+        </div>
+
+        <div style="display: flex; gap: var(--space-2); margin-top: auto;">
+          <a class="btn btn--accent btn--sm" href="https://wa.me/256788701773" style="flex: 1;">Chat on WhatsApp</a>
+          <a class="btn btn--ghost-dark btn--sm" href="tel:+256788701773" style="flex: 1;">Call directly</a>
         </div>
       </div>
 
@@ -209,12 +245,12 @@
     <div class="site-footer__grid">
       <div>
         <span class="wordmark">
-          <img src="assets/img/logo.png" alt="GenBionex" class="wordmark__logo">
+          <img src="assets/img/logo.png" alt="GenBionex - Unlocking Your Farm Potential" class="wordmark__logo">
         </span>
-        <p style="margin-top: var(--space-3); max-width: 32em;">GenBionex Consulting Company Ltd — professional livestock breeding and management services built on genetic technology, serving livestock enterprises across Uganda.</p>
+        <p style="margin-top: var(--space-3); max-width: 32em;">GenBionex Consulting Company Ltd — professional livestock breeding, genomic technologies, and farm enterprise advisory serving livestock enterprises across Uganda.</p>
       </div>
       <div>
-        <h2>Site</h2>
+        <h2>Navigation</h2>
         <ul class="site-footer__links">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Our Services</a></li>
@@ -227,13 +263,14 @@
         <ul class="site-footer__links">
           <li><a href="mailto:info@genbionex.ug">info@genbionex.ug</a></li>
           <li><a href="tel:+256788701773">+256 788701773</a></li>
-          <li><a href="https://wa.me/256788701773">WhatsApp</a></li>
+          <li><a href="https://wa.me/256788701773">WhatsApp: +256 788701773</a></li>
+          <li><span>Wakiso District, P.O. Box 748, Entebbe</span></li>
         </ul>
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>© 2026 GenBionex Consulting Company Ltd.</span>
-      <span>Designed by <a href="https://blactec.ug">blactec.ug</a></span>
+      <span>© 2026 GenBionex Consulting Company Ltd. All rights reserved.</span>
+      <span>Designed by <a href="https://blactec.ug" target="_blank" rel="noopener">blactec.ug</a></span>
     </div>
   </div>
 </footer>
