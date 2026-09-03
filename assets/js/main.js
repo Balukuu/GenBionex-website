@@ -111,6 +111,37 @@ function initFaqAccordion() {
   });
 }
 
+function initScrollRows() {
+  document.querySelectorAll('[data-scroll-track]').forEach((track) => {
+    const row = track.closest('.scroll-row');
+    if (!row) return;
+    const viewport = track.closest('.scroll-row__viewport');
+    const prevBtn = row.querySelector('[data-scroll-prev]');
+    const nextBtn = row.querySelector('[data-scroll-next]');
+
+    function step(dir) {
+      const card = track.querySelector(':scope > *');
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0');
+      const amount = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+      track.scrollBy({ left: dir * amount, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    }
+    if (prevBtn) prevBtn.addEventListener('click', () => step(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => step(1));
+
+    function updateState() {
+      const max = track.scrollWidth - track.clientWidth - 1;
+      const atStart = track.scrollLeft <= 0;
+      const atEnd = track.scrollLeft >= max;
+      if (prevBtn) prevBtn.disabled = atStart;
+      if (nextBtn) nextBtn.disabled = atEnd;
+      if (viewport) viewport.classList.toggle('is-end', atEnd);
+    }
+    track.addEventListener('scroll', updateState, { passive: true });
+    window.addEventListener('resize', updateState, { passive: true });
+    updateState();
+  });
+}
+
 function initServiceStickyNav() {
   const navLinks = document.querySelectorAll('.services-nav__link');
   if (!navLinks.length) return;
@@ -231,6 +262,7 @@ initMenu();
 initReveal();
 initStrategyExplorer();
 initFaqAccordion();
+initScrollRows();
 initServiceStickyNav();
 initContactForm();
 initContactCounter();

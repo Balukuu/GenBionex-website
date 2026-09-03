@@ -194,8 +194,18 @@
         <p class="lede">Every service connects field-tested agricultural management with modern genetic science to eliminate guesswork and maximize herd profitability.</p>
       </div>
 
-      <div class="grid grid--5">
-        
+      <div class="scroll-row">
+        <div class="scroll-row__nav">
+          <button type="button" class="scroll-row__btn" data-scroll-prev aria-label="Scroll to previous pillar">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+          <button type="button" class="scroll-row__btn" data-scroll-next aria-label="Scroll to next pillar">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="scroll-row__viewport">
+          <div class="grid grid--5" data-scroll-track>
+
         <!-- Card 1: Advisory -->
         <div class="visual-card visual-card--blue reveal">
           <div class="visual-card__media">
@@ -341,6 +351,8 @@
           </div>
         </div>
 
+          </div>
+        </div>
       </div>
     </div>
   </section>
