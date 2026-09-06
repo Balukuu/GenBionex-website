@@ -438,6 +438,19 @@ h4, .h4 { font-size: var(--text-lg); }
   white-space: nowrap;
 }
 .wordmark__logo { display: block; height: 46px; width: auto; object-fit: contain; }
+.wordmark__fullname {
+  display: none;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--gray);
+  white-space: normal;
+  line-height: 1.2;
+  max-width: 11rem;
+}
+.wordmark__fullname .wordmark__gen { color: #0070C0; }
+.wordmark__fullname .wordmark__bio { color: #47D45A; }
+.wordmark__fullname .wordmark__nex { color: #7030A0; }
+@media (min-width: 56rem) { .wordmark__fullname { display: block; } }
 
 .nav-primary { display: none; }
 @media (min-width: 64rem) {
