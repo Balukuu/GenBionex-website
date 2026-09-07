@@ -6,17 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://genbionex.ug/services.html</loc>
+    <loc>https://genbionex.ug/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://genbionex.ug/about.html</loc>
+    <loc>https://genbionex.ug/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://genbionex.ug/contact.html</loc>
+    <loc>https://genbionex.ug/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
