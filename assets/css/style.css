@@ -1540,8 +1540,19 @@ h4, .h4 { font-size: var(--text-lg); }
   text-transform: uppercase;
   color: var(--ink);
 }
-.service-card__deliverables li { display: flex; gap: var(--space-2); }
-.service-card__deliverables li::before { content: '—'; color: var(--lime-deep); font-weight: 800; }
+.service-card__deliverables li {
+  position: relative;
+  padding-left: 1.2em;
+  overflow-wrap: break-word;
+}
+.service-card__deliverables li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--lime-deep);
+  font-weight: 800;
+}
 .service-card__cta {
   margin-top: auto;
   padding-top: var(--space-3);
@@ -1572,18 +1583,13 @@ h4, .h4 { font-size: var(--text-lg); }
     padding-left: var(--space-6);
     border-left: 1px solid var(--border);
   }
-  .service-card.span-full .service-card__deliverables {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem 1.5rem;
-    margin-top: 0;
-  }
+  .service-card.span-full .service-card__deliverables { margin-top: 0; }
   .service-card.span-full .service-card__cta {
     margin-top: var(--space-5);
     padding-top: var(--space-4);
     border-top: 1px solid var(--border);
   }
 }
-
 /* ---------------------------------------------------------------------- */
 /* 17. CONTACT FORM & DETAILS                                             */
 /* ---------------------------------------------------------------------- */
